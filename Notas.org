@@ -41,10 +41,49 @@ si queremos ejecutar es darle ctrl+c y yes
 *  Sistemas Operativo
 ** Comandos para manejar procesos en Linux
 *** Ver proceos activos
+*ps*
+Muestra una lista de proceos en la terminal actual
+
+*ps aux*
+Muetra todos los proceos en ejecución en el sistema
+
+*top*
+Muestra una lista dinámica de proceos en tiempo real
+
+*htop*
+Ofrece una interfaz más visual y personalizable
+
+*pgre <nobre>*
+Busca el PID (proceos ID) de un proceso en especifico 
 *** Iniciar procesos activos
+*&*
+Ejecuta un comando en segundo plano (comando &)
+
+*nohub <comando>&*
+Inicia un proceos que continua en ejecución aunque se cierre (nohup script.sh &)
 *** Controlar la ejecución de proceos
+*fg*
+Trae un proceso en segundo plano a primer plano
+
+*bg*
+Envia procesos suspendidos al segundo plano
+
+*jobs*
+Muestra los procesos en segudo plano
 *** Enviar señales a los procesos
-*** Cambiar prioridad de proceos
+*kill<PID>*
+Termina el proceso especificado por su PID
+
+*kill-9<PID>*
+Fuersza el cierre inmediato del proceso especificado
+
+*pkill<nombre>*
+Termina todos los proceso que coinciden con el nombre especificado
+
+*killall<nombre>* Similar a pkill, detiene todos los procesos con un nombre especifico.
+
+*** Cambiar prioridad de proceo
+s
 *** Ver detalles especificos de los proceos
 ps:
 Muestra una lista de proceos en la terminal actual
