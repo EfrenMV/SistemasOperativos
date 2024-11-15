@@ -83,27 +83,17 @@ Termina todos los proceso que coinciden con el nombre especificado
 *killall<nombre>* Similar a pkill, detiene todos los procesos con un nombre especifico.
 
 *** Cambiar prioridad de proceo
-s
+*nice-n<prioridad><comando>*
+Inicia un proceso con una prioridad especifica (20 mayor 19 menor prioridad)
+
+*rice<prioridad><PID>*
+Cambia la prioridad de un proceos en ejecucoión (renice-5 1234)
 *** Ver detalles especificos de los proceos
-ps:
-Muestra una lista de proceos en la terminal actual
-(PID,usuario,CPU,memoria, etc)
+*pstree*
+Muestra los proceso en una estructura de árbol*
 
-ps aux:
-Muestra todos los proceos en ejecución en el sistema
-
-top:
-Muestra una lista dinamica de procesos en tiempo real, catualizandose constantemente
-(CPU,memoria y estadistica del sistema)
-
-htop:
-Muestra una interfaz mas visual y personalizable que top
-
-pgrep<nombre>
-Busca el PID (Process ID) de un proceso en especifico por su nombre
-
-pgrep apache
-muestra el PID del proceso con el nombre "apache"
+*Isof-p<PID>*
+Lista todos los archivos abiertos por un proceso específico
 ** Punteros en C
 ** Concepto de proceos
 ** Fork() en c
