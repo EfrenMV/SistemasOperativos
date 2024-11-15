@@ -120,8 +120,8 @@ utiliza el operador de transferencia *
 #+BEGIN_SRC C
 
   printf("Valor de var: %d\n", *ptr) //Imprime el valor de 10 por que usamos el *ptr
-  //si usamos ptr imprime la direccion si usamos *ptr imprime el numero que apunta la idreccion 
-  ,*ptr = 20; //Ahora var vale 20
+  //si usamos ptr imprime la direccion si usamos *ptr imprime el numero que apunta la direccion 
+  *ptr = 20; //Ahora var vale 20
 
 #+END_SRC
 *** Punteros y arreglos
@@ -129,13 +129,41 @@ En c el nombre del arreglo actúa como puntero al primer elemento del mismo
 usamos aritmetica de punteros para recorrer punteros
 #+BEGIN_SRC C
 
-  int arr[3] = {1,2,3};
-  int *ptr = arr;
-  for (int i = 0; i<3, i++){
-      printf("%d ", *(ptr + i));
+    int arr[3] = {1,2,3};
+    int *ptr = arr; //Guardamos la direccion de memoria del arreglo base entonces tenmos la de arr[0]
+    //Quien dice si lo imprimimos con una desreferenciación (*ptr) imprime 1
+    for (int i = 0; i<3, i++){
+	printf("%d ", *(ptr + i));
+	/*al puntero se le suma 0 sigue apuntando a la misma direccion por ende imprime 1
+	al puntero se le suma 1 apunta a la siguiente direccion de memoria que pasa ser la del arr[1]
+        Asi sucesivamente            
+        */
+    }
+#+END_SRC
+*** Punteros y funciones
+#+BEGIN_SRC C
+
+  #include <stdio.h>
+  void incrementar(int *n) { //Lo optiene con el valor en la direccion de memoria
+      (*n)++; //Incrementa el valor en la direccion de memoria
   }
+  int main() {
+      int num = 5;
+      incrementar(&num); //Mandamos la direccion de memoria del num
+      printf("Valor de num: %d\n", num); // Imprime: Valor de num: 6
+      return 0;
+  }
+  
 #+END_SRC
 
+#+RESULTS:
+: Valor de num: 6
+
+*** Punteros nulos
+#+BEGIN_SRC C
+  int *ptr = NULL; //No apunta a nada pero es buena practica para inicicializar los punteros
+//Asi evitamos errores
+#+END_SRC
 ** Concepto de proceos
 ** Fork() en c
 ** Estados y transiciones de los proceos*
