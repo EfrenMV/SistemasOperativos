@@ -199,7 +199,10 @@ usamos aritmetica de punteros para recorrer punteros
 #+END_SRC 
 
 ** Concepto de proceos
+Un proceso es una unidad de ejecución dentro de un sistema operativop 
 ** Fork() en c
+*** ¿Que es un Fork?
+
 ** Estados y transiciones de los proceos*
 ** Tabla de Proceos
 ** Proceos ligeros: Hilos o hebras
