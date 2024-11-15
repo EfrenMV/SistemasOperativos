@@ -202,6 +202,40 @@ usamos aritmetica de punteros para recorrer punteros
 Un proceso es una unidad de ejecución dentro de un sistema operativop 
 ** Fork() en c
 *** ¿Que es un Fork?
+Es la creación de un nuevo proceso donde tiene un proceso hijo
+*** Funcionamiento basico de fork()
+*padre* , frok() devuelve el PID del proceso hijo
+*hijo*, fork() devuelve el valor 0
+*error*, fork() retorna -1
+*** Ejemplo basico de fork()
+#+BEGIN_SRC C
+  #include <stdio.h>
+  #include <unistd.h>
+  int main() {
+    //Se crea un fork el cual es guardado en pid
+      pid_t pid = fork(); 
+
+      //Si el resultado da -1 signiica que hay error 
+      if (pid == -1) {
+	  perror("fork failed");
+	  return 1;
+     //Si no hay error y el pid es 0 entonces es el hijo
+      } else if (pid == 0) {
+	  // Código que ejecuta el proceso hijo
+	  printf("Este es el proceso hijo con PID: %d\n", getpid());
+     //Si no es el hijo entonces es el padre 
+      } else {
+	  // Código que ejecuta el proceso padre
+	  printf("Este es el proceso padre con PID: %d y el hijo tiene PID: %d\n", getpid(), pid);
+      }
+      return 0;
+  }
+  //Normalemente el proceso padre se ejecuta priemro pero no es una regla fija 
+#+END_SRC 
+
+#+RESULTS:
+| Este | es | el | proceso | padre | con | PID: | 17997 | y | el | hijo | tiene | PID: | 17998 |
+| Este | es | el | proceso | hijo  | con | PID: | 17998 |   |    |      |       |      |       |
 
 ** Estados y transiciones de los proceos*
 ** Tabla de Proceos
