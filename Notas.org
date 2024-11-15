@@ -262,6 +262,46 @@ Para que el padre espere que el hijo termine se usa el wait()
 | Proceso hijo con PID: 18495  |                  |
 | Proceso padre con PID: 18494 | el hijo terminó. |
 
+*** frok() y Punteros
+el fork hijo crea un espacio de memoria independiente pero sigue
+apuntando con los punteros a las mismas direcciones relativamente hablando
+
+*** fork() con punteros ejemplo
+#+BEGIN_SRC C
+  #include <stdio.h>
+  #include <unistd.h>
+  #include <stdlib.h>
+  #include <sys/wait.h> //Libreria para el wait(NULL)
+
+
+  int main() {
+      int *ptr = (int*)malloc(sizeof(int));
+      ,*ptr = 100;
+
+      pid_t pid = fork();
+
+      if (pid == 0) {
+	  // Proceso hijo
+	  printf("Proceso hijo: valor de *ptr antes de cambiar = %d\n", *ptr);
+	  ,*ptr = 200;
+	  printf("Proceso hijo: valor de *ptr después de cambiar = %d\n", *ptr);
+      } else {
+	  // Proceso padre
+	  wait(NULL);
+	  printf("Proceso padre: valor de *ptr = %d\n", *ptr);
+      }
+
+      free(ptr);
+      return 0;
+  }
+#+END_SRC 
+
+#+RESULTS:
+| Proceso | hijo:  | valor | de | *ptr | antes   | de  | cambiar | = | 100 |
+| Proceso | hijo:  | valor | de | *ptr | después | de  | cambiar | = | 200 |
+| Proceso | padre: | valor | de | *ptr | =       | 100 |         |   |     |
+
+
 ** Estados y transiciones de los proceos*
 ** Tabla de Proceos
 ** Proceos ligeros: Hilos o hebras
