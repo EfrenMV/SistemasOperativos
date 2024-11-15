@@ -164,6 +164,17 @@ usamos aritmetica de punteros para recorrer punteros
   int *ptr = NULL; //No apunta a nada pero es buena practica para inicicializar los punteros
 //Asi evitamos errores
 #+END_SRC
+
+*** Aritmetica de punterso
+#+BEGIN_SRC C
+
+  int arr[3] = {10,20.30};
+  int *ptr = arr; //guardamos el arr[0]
+
+  ptr++; //Aumenta la direccion de memoria almacenada para apuntar a arr[1]
+  printf("%d\n", *ptr); //Imprime el 20
+
+#+END_SRC
 ** Concepto de proceos
 ** Fork() en c
 ** Estados y transiciones de los proceos*
