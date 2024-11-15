@@ -175,6 +175,29 @@ usamos aritmetica de punteros para recorrer punteros
   printf("%d\n", *ptr); //Imprime el 20
 
 #+END_SRC
+*** Punteros a punteros
+#+BEGIN_SRC C
+
+  int var = 100; //variable con el valor de 100
+  int *ptr = &var; //Puntero que apunta a la direccion de memoria var
+  int **ptr2 = &ptr; // Puntero que apunta a la direccion de memoria de ptr
+
+  //Imprime el valor que apunta ptr2
+  printf("Valor de var "%d\n", **ptr2);
+
+#+END_SRC
+*** Dobles y triples punteros
+#+BEGIN_SRC C
+    int var = 50;
+    int *ptr = &var;
+    int **dbl_ptr = &ptr;
+    int ***trp_ptr = &dbl_ptr
+
+    printf("Valor de var usando dbl_ptr: %d\n", **trp_ptr); // Imprime: 50
+
+  //Parece ser lo mismo que punteros a punteros 
+#+END_SRC 
+
 ** Concepto de proceos
 ** Fork() en c
 ** Estados y transiciones de los proceos*
