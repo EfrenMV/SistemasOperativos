@@ -95,6 +95,47 @@ Muestra los proceso en una estructura de árbol*
 *Isof-p<PID>*
 Lista todos los archivos abiertos por un proceso específico
 ** Punteros en C
+*** ¿Qué es un puntero?
+Variable que almacena la dirección de memoria de otra viariable
+*** Declaración de punteros
+#+BEGIN_SRC C
+
+  int *ptr;
+
+#+END_SRC
+#ptr es un puntero entero
+*** Inicialización de punteros
+Un puntero debe inizializarse con la direccion de una variable antes de ser
+usado (usamos & para optener la direccion)
+#+BEGIN_SRC C
+
+  int var = 10;
+  int *ptr = &var; //Guarda la direccion de memoria no el 10 perse
+
+#+END_SRC
+Aqui ptr almacena la dirección de var
+*** Acceso al valor apuntado
+Para acceder o modificar el valor de la variable a la que se apunta un puntero
+utiliza el operador de transferencia *
+#+BEGIN_SRC C
+
+  printf("Valor de var: %d\n", *ptr) //Imprime el valor de 10 por que usamos el *ptr
+  //si usamos ptr imprime la direccion si usamos *ptr imprime el numero que apunta la idreccion 
+  ,*ptr = 20; //Ahora var vale 20
+
+#+END_SRC
+*** Punteros y arreglos
+En c el nombre del arreglo actúa como puntero al primer elemento del mismo
+usamos aritmetica de punteros para recorrer punteros
+#+BEGIN_SRC C
+
+  int arr[3] = {1,2,3};
+  int *ptr = arr;
+  for (int i = 0; i<3, i++){
+      printf("%d ", *(ptr + i));
+  }
+#+END_SRC
+
 ** Concepto de proceos
 ** Fork() en c
 ** Estados y transiciones de los proceos*
