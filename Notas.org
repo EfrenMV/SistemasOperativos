@@ -19,10 +19,6 @@ Si queremos habrir titlos es con TAP
 si queremos ejecutar es darle ctrl+c y yes
 
 * Ejemplo de código en C
-
-texto texto
-texto
-texto
 *** subtitulo
 #+BEGIN_SRC C
   #include <stdio.h>
