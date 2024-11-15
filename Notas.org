@@ -236,6 +236,31 @@ Es la creación de un nuevo proceso donde tiene un proceso hijo
 #+RESULTS:
 | Este | es | el | proceso | padre | con | PID: | 17997 | y | el | hijo | tiene | PID: | 17998 |
 | Este | es | el | proceso | hijo  | con | PID: | 17998 |   |    |      |       |      |       |
+*** Espera del proceos padre con Wait()
+Para que el padre espere que el hijo termine se usa el wait()
+#+BEGIN_SRC C
+  #include <stdio.h>
+  #include <unistd.h>
+  #include <sys/wait.h> //Libreria para el wait(NULL)
+
+  int main() {
+      pid_t pid = fork();  //Guardamis el precos en pid
+
+    //Pasa si es el proceos hijo
+      if (pid == 0) {
+	  printf("Proceso hijo con PID: %d\n", getpid());
+    //Si no es el hijo es el padre (aunque podria pasar el error tambien)
+      } else {
+          wait(NULL); // Espera a que el proceso hijo termine
+	  printf("Proceso padre con PID: %d, el hijo terminó.\n", getpid());
+      }
+      return 0;
+  }
+#+END_SRC 
+
+#+RESULTS:
+| Proceso hijo con PID: 18495  |                  |
+| Proceso padre con PID: 18494 | el hijo terminó. |
 
 ** Estados y transiciones de los proceos*
 ** Tabla de Proceos
