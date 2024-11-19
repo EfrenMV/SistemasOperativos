@@ -767,11 +767,6 @@ int main() {
 *** Prioridad
 
 ** Técnicas de Administración del Planificador
-*Round Robin*
-
-*Prioridad*
-
-*Planificación en tiempo real*
 
 ** Iniciar Prcesos
 &:
@@ -1223,4 +1218,4 @@ int main() {
 
 #+RESULTS:
 | División       | por | restas: | Cociente | = | 6, | Residuo | = | 2 |
-| Multiplicación | por | sumas:  | Producto | = | 20 |    
+| Multiplicación | por | sumas:  | Producto | = | 20 |         |   |   |
