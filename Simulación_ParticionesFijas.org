@@ -11,3 +11,15 @@
 ejemplo de los nodos:
 nodo a[100];
 
+#+BEGIN_SRC C
+    #include <stdio.h>
+
+  int main(){
+      printf("Probando");
+      return 0;
+      }
+#+END_SRC
+
+
+#+RESULTS:
+: Probando
