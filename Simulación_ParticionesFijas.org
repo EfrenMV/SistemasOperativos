@@ -1,0 +1,12 @@
+** Ejercicio
+
+1. Simulación de particiones fijas:
+
+   -Escribe un programa que simule un sistema de administración de memoria con particiones fijas
+   -Debe permitir al usuario definir el tamaño total de la memoria y las particiones
+   -Simula la asignación y liberación de procesos a las particiones, mostrando cómo se utiliza la memoria
+   -Esto hacerlo con areglos
+
+ejemplo de los nodos:
+nodo a[100];
+
