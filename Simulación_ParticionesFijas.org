@@ -12,31 +12,33 @@ ejemplo de los nodos:
 nodo a[100];
 
 #+BEGIN_SRC C
-    #include <stdio.h>
+  #include <stdio.h>
 
-    //Definimos el tipo nodo con el struct
-    typedef struct {
-     int inicio;
-     int fin;
-      } nodo;
+  //Definimos el tipo nodo con el struct
+  typedef struct {
+   int inicio;
+   int fin;
+    } nodo;
 
-    int main(){
-      int espacioMemoria, particiones;
-      nodo arr[1000]; //Asignación estatica
+  int main(){
+    int espacioMemoria, particiones;
+    nodo arr[1000]; //Asignación estatica
 
-	//Espacio en memoria 
-	printf("Memoria:");
-	scanf("%d",  &espacioMemoria);
+      //Espacio en memoria 
+      printf("Memoria:");
+      scanf("%d",  &espacioMemoria);
+      getchar();
 
-	//Particiones
-	printf("\nParticiones:\n");
-	scanf("%d", &particiones);
+      //Particiones
+      printf("\nParticiones:\n");
+      scanf("%d", &particiones);
+      getchar();
 
 
-       printf("memoria: %d\n", espacioMemoria);
-       printf("particiones: %d\n" ,particiones);
-	 return 0;
-	}
+     printf("memoria: %d\n", espacioMemoria);
+     printf("particiones: %d\n" ,particiones);
+       return 0;
+      }
 #+END_SRC
 
 #+RESULTS:
