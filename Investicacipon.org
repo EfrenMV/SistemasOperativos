@@ -1,0 +1,2 @@
+Actividad 1
+Buscar que librerias usar para mi camara, impresora, escaner 
