@@ -1,14 +1,14 @@
 * Actividad 1
 
-
     Abra una terminal en su entorno Linux.
     Ejecute los siguientes comandos y anote sus observaciones
     :
-  `lsblk`: Enumera los dispositivos de bloque.
-  `lsusb`: Lista los dispositivos conectados a los puertos USB.
-  `lspci`: Muestra los dispositivos conectados al bus PCI.
-  `dmesg | grep usb`: Muestra los mensajes del kernel relacionados con dispositivos USB.
+  *lsblk*: Enumera los dispositivos de bloque.
+  *lsusb*: Lista los dispositivos conectados a los puertos USB.
+  *lspci*: Muestra los dispositivos conectados al bus PCI.
+  *dmesg | grep usb*: Muestra los mensajes del kernel relacionados con dispositivos USB.
     Conteste:
+    
 *** ¿Qué tipos de dispositivos se muestran en la salida de `lsblk`?
 Nos aparecen lo siguiente
 - *Particiones*
